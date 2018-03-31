@@ -51,3 +51,7 @@ vendor
 #build
 build
 languages/*.pot
+
+# Project Notes
+TODO.md
+NOTES.md
