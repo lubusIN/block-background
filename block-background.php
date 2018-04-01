@@ -174,25 +174,27 @@ class LubusIN_Block_Background {
 			'block-background-js',
 			BLOCKBG_PLUGIN_URL . $block_js,
 			array(
-				'wp-blocks',
 				'wp-i18n',
+				'wp-blocks',
+				'wp-hooks',
+				'wp-element',
 			),
 			filemtime( BLOCKBG_PLUGIN_DIR . $block_js )
 		);
 
 		// Style
-		wp_register_style(
+		/* wp_register_style(
 			'block-background',
 			BLOCKBG_PLUGIN_URL . $block_css,
 			array(
 				'wp-blocks',
 			),
 			filemtime(BLOCKBG_PLUGIN_DIR . $block_css)
-		);
+		) */;
 
 		// Register block type
 		register_block_type('lubus/block-background', array(
-			'style'         => 'block-background',
+			//'style'         => 'block-background',
 			'script'        => 'block-background-js',
 		));
 	}
