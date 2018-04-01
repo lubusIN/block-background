@@ -6,7 +6,6 @@ import assign from 'lodash.assign';
 /**
  * WordPress Dependencies
  */
-const { __ } = wp.i18n;
 const { addFilter } = wp.hooks;
 const { getWrapperDisplayName } = wp.element;
 
@@ -57,7 +56,7 @@ function withInspectorControl( BlockEdit ) {
 function withBackground( BlockListBlock ) {
 	const WrappedComponent = ( props ) => {
 		let wrapperProps = props.wrapperProps;
-		wrapperProps = { ...wrapperProps, 'data-test': 'working' };
+		wrapperProps = { ...wrapperProps, 'data-test': 'editTest' };
 
 		return <BlockListBlock { ...props } wrapperProps={ wrapperProps } />;
 	};
@@ -77,8 +76,7 @@ function withBackground( BlockListBlock ) {
  * @return {Object} Filtered props applied to save element.
  */
 function addAssignedBackground( extraProps, blockType, attributes ) {
-	extraProps = { ...extraProps, 'data-test': 'Working' };
-	return extraProps;
+	return Object.assign( extraProps, { style: { backgroundColor: 'red' } } );
 }
 
 addFilter( 'blocks.registerBlockType', 'lubus/background/attribute', addAttribute );

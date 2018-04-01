@@ -1,7 +1,7 @@
 /**
  * Gradients Preset Object
  */
-const Gradients = [
+const gradients = [
 	{
 		name: 'Berimbolo',
 		colors: [
@@ -2092,4 +2092,4 @@ const Gradients = [
 	},
 ];
 
-export default Gradients;
+export default gradients;

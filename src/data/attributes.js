@@ -9,12 +9,18 @@ const backgroundSettings = {
 		type: 'string',
 	},
 	gradient: {
-		type: 'string',
+		type: 'array',
 	},
-	image: {
+	mediaID: {
+		type: 'number',
+	},
+	mediaURL: {
 		type: 'string',
 	},
 	overlay: {
+		type: 'string',
+	},
+	overlayType: {
 		type: 'string',
 	},
 	opacity: {
