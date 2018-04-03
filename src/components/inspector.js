@@ -48,7 +48,6 @@ const Inspector = ( props ) => {
 			backgroundType: newType,
 			overlay: undefined,
 			overlayType: undefined,
-			opacity: undefined,
 		} );
 	};
 	const onChangeSolidColor = ( newColor ) => {
@@ -86,7 +85,7 @@ const Inspector = ( props ) => {
 	/>;
 
 	const gradientControl = <SelectControl
-		label={ __( 'Gradients' ) }
+		label={ __( 'Gradient Presets' ) }
 		options={ gradients.map( ( preset ) => {
 			return {
 				value: preset.colors,
@@ -100,7 +99,7 @@ const Inspector = ( props ) => {
 	// Inspector Controls
 	return (
 		<InspectorControls>
-			<PanelBody title={ __( 'Background' ) } initialOpen={ false } >
+			<PanelBody title={ __( 'Background Settings' ) } initialOpen={ true } >
 				<ButtonGroup aria-label={ __( 'Background Type' ) }>
 					{
 						options.backgroundType.map( ( type ) => {

@@ -2,6 +2,7 @@
  * External Dependencies
  */
 import assign from 'lodash.assign';
+import classnames from 'classnames';
 
 /**
  * WordPress Dependencies
@@ -14,6 +15,8 @@ const { getWrapperDisplayName } = wp.element;
 */
 import backgroundSettings from './data/attributes';
 import Inspector from './components/inspector';
+import getStyle from './utils/get-style';
+import './style.scss';
 
 /**
  * Filters registered block settings, extending attributes with background settings
@@ -24,7 +27,6 @@ import Inspector from './components/inspector';
 function addAttribute( settings ) {
 	// Use Lodash's assign to gracefully handle if attributes are undefined
 	settings.attributes = assign( settings.attributes, backgroundSettings );
-
 	return settings;
 }
 
@@ -38,8 +40,8 @@ function addAttribute( settings ) {
 function withInspectorControl( BlockEdit ) {
 	const WrappedBlockEdit = ( props ) => {
 		return [
-			<BlockEdit key="block-edit-background" { ...props } />,
 			props.isSelected && <Inspector { ... { ...props } } />,
+			<BlockEdit key="block-edit-background" { ...props } />,
 		];
 	};
 	WrappedBlockEdit.displayName = getWrapperDisplayName( BlockEdit, 'block-background' );
@@ -56,7 +58,7 @@ function withInspectorControl( BlockEdit ) {
 function withBackground( BlockListBlock ) {
 	const WrappedComponent = ( props ) => {
 		let wrapperProps = props.wrapperProps;
-		wrapperProps = { ...wrapperProps, 'data-test': 'editTest' };
+		wrapperProps = { ... wrapperProps, style: getStyle( props.block.attributes ) };
 
 		return <BlockListBlock { ...props } wrapperProps={ wrapperProps } />;
 	};
@@ -75,11 +77,16 @@ function withBackground( BlockListBlock ) {
  *
  * @return {Object} Filtered props applied to save element.
  */
-function addAssignedBackground( extraProps, blockType, attributes ) {
-	return Object.assign( extraProps, { style: { backgroundColor: 'red' } } );
+function addBackground( extraProps, blockType, attributes ) {
+	return assign(
+		extraProps,
+		{
+			style: getStyle( attributes ),
+		}
+	);
 }
 
 addFilter( 'blocks.registerBlockType', 'lubus/background/attribute', addAttribute );
 addFilter( 'blocks.BlockEdit', 'lubus/background/inspector', withInspectorControl );
 addFilter( 'editor.BlockListBlock', 'lubus/background/withBackground', withBackground );
-addFilter( 'blocks.getSaveContent.extraProps', 'lubus/background/addAssignedBackground', addAssignedBackground );
+addFilter( 'blocks.getSaveContent.extraProps', 'lubus/background/addAssignedBackground', addBackground );

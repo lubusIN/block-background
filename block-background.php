@@ -78,7 +78,7 @@ class LubusIN_Block_Background {
 	private function init_hooks() {
 		// Set up localization on init Hook.
 		add_action( 'init', array( $this, 'load_textdomain' ), 0 );
-		add_action( 'init', array( $this, 'register_block_background' ) );
+		add_action( 'enqueue_block_editor_assets', array( $this, 'register_block_background' ) );
 	}
 
 	/**
@@ -183,20 +183,17 @@ class LubusIN_Block_Background {
 		);
 
 		// Style
-		/* wp_register_style(
+		wp_register_style(
 			'block-background',
 			BLOCKBG_PLUGIN_URL . $block_css,
 			array(
 				'wp-blocks',
 			),
 			filemtime(BLOCKBG_PLUGIN_DIR . $block_css)
-		) */;
+		);
 
-		// Register block type
-		register_block_type('lubus/block-background', array(
-			//'style'         => 'block-background',
-			'script'        => 'block-background-js',
-		));
+		wp_enqueue_style( 'block-background' );
+		wp_enqueue_script( 'block-background-js' );
 	}
 }
 

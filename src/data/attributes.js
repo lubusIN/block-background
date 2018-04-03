@@ -9,7 +9,7 @@ const backgroundSettings = {
 		type: 'string',
 	},
 	gradient: {
-		type: 'array',
+		type: 'string',
 	},
 	mediaID: {
 		type: 'number',
@@ -18,13 +18,14 @@ const backgroundSettings = {
 		type: 'string',
 	},
 	overlay: {
-		type: 'string',
+		type: 'boolean',
 	},
 	overlayType: {
 		type: 'string',
 	},
 	opacity: {
-		type: 'string',
+		type: 'number',
+		default: 5,
 	},
 };
 

@@ -7,7 +7,9 @@
     "npm": ">=5.0.0"
   },
   "dependencies": {
-    "lodash.assign": "^4.2.0"
+    "classnames": "^2.2.5",
+    "lodash.assign": "^4.2.0",
+    "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
     "@wordpress/babel-preset-default": "1.0.3",

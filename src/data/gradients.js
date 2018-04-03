@@ -3,6 +3,10 @@
  */
 const gradients = [
 	{
+		name: 'Select Gradient',
+		colors: -1,
+	},
+	{
 		name: 'Berimbolo',
 		colors: [
 			'#02111D',
