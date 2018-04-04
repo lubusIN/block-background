@@ -32,7 +32,7 @@ function getStyle( attributes ) {
 			break;
 
 		case 'image':
-			// TOOD: Reafctor
+			// TOOD: Refactor
 			if ( overlay && ( 'color' === overlayType || 'gradient' === overlayType ) ) {
 				switch ( overlayType ) {
 					case 'color':

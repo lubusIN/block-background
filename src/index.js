@@ -24,7 +24,7 @@ import './style.scss';
  * @param {Object} settings Original block settings.
  * @return {Object} Filtered block settings.
  */
-function addAttribute( settings ) {
+function addAttributes( settings ) {
 	// Use Lodash's assign to gracefully handle if attributes are undefined
 	settings.attributes = assign( settings.attributes, backgroundSettings );
 	return settings;
@@ -58,7 +58,10 @@ function withInspectorControl( BlockEdit ) {
 function withBackground( BlockListBlock ) {
 	const WrappedComponent = ( props ) => {
 		let wrapperProps = props.wrapperProps;
-		wrapperProps = { ... wrapperProps, style: getStyle( props.block.attributes ) };
+		wrapperProps = {
+			... wrapperProps,
+			style: getStyle( props.block.attributes ),
+		};
 
 		return <BlockListBlock { ...props } wrapperProps={ wrapperProps } />;
 	};
@@ -78,15 +81,17 @@ function withBackground( BlockListBlock ) {
  * @return {Object} Filtered props applied to save element.
  */
 function addBackground( extraProps, blockType, attributes ) {
-	return assign(
-		extraProps,
-		{
-			style: getStyle( attributes ),
-		}
-	);
+	extraProps.style = getStyle( attributes );
+	const { backgroundType, solidColor, gradient, imageID } = attributes;
+
+	if ( backgroundType && ( solidColor || gradient || imageID ) ) {
+		extraProps.className = classnames( extraProps.className, 'has-background' );
+	}
+
+	return extraProps;
 }
 
-addFilter( 'blocks.registerBlockType', 'lubus/background/attribute', addAttribute );
+addFilter( 'blocks.registerBlockType', 'lubus/background/attribute', addAttributes );
 addFilter( 'blocks.BlockEdit', 'lubus/background/inspector', withInspectorControl );
 addFilter( 'editor.BlockListBlock', 'lubus/background/withBackground', withBackground );
 addFilter( 'blocks.getSaveContent.extraProps', 'lubus/background/addAssignedBackground', addBackground );

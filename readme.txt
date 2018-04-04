@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Extend gutenberg blocks with additional background options
 
 == Description ==
->**Disclaimer:** Plugin development is in progress & we are constantly improving the code. If you think code can be improved or have any suggestion feel free to send a PR or [open an issue](https://github.com/lubusIN/block-background/issues).
+>**Disclaimer:** Experimental feature plugin to extend gutenberg block. Have a suggestion feel free to send a PR or [open an issue](https://github.com/lubusIN/block-background/issues).
 
 Extend gutenberg blocks with additional background options
 
@@ -48,6 +48,6 @@ If you have any suggestions/Feature request that you would like to see in the up
 
 ***v1.0***
 
-Released on 29th March 2018
+Released on
 
  - Initial plugin release

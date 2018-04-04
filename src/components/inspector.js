@@ -125,39 +125,42 @@ const Inspector = ( props ) => {
 				{ 'image' === backgroundType &&
 					(
 						<MediaUpload
-							key="mediupload"
+							key="mediaupload"
 							onSelect={ onSelectImage }
 							type="image"
-							render={ ( { open } ) => (
-								<Fragment>
-									<Button
-										className="button-link"
-										onClick={ open }>
-										{ ! mediaID ?
-											__( 'Set background image' ) :
-
-											<img src={ mediaURL } />
-										}
-									</Button>
-
-									{
-										mediaID &&
-										<Fragment>
-											<p className="editor-post-featured-image__howto">
-												{ __( 'Click the image to edit or update' ) }
-											</p>
-											<Button
-												className="button-link"
-												style={ { marginBottom: '20px' } }
-												onClick={ onRemoveImage }>
-												{ __( 'Remove background image' ) }
-											</Button>
-										</Fragment>
-									}
-								</Fragment>
-							) }
+							value={ mediaID }
+							render={
+								( { open } ) => (
+									<Fragment>
+										<Button
+											className="button-link"
+											onClick={ open }>
+											{ ! mediaID ?
+												__( 'Set background image' ) :
+												<img src={ mediaURL } />
+											}
+										</Button>
+									</Fragment>
+								)
+							}
 						/>
 					)
+				}
+
+				{
+					// Actions for background image selected
+					( 'image' === backgroundType && mediaID ) &&
+						<Fragment>
+							<p className="editor-post-featured-image__howto">
+								{ __( 'Click the image to edit or update' ) }
+							</p>
+							<Button
+								className="button-link"
+								style={ { marginBottom: '20px' } }
+								onClick={ onRemoveImage }>
+								{ __( 'Remove background image' ) }
+							</Button>
+						</Fragment>
 				}
 
 				{ ( 'image' === backgroundType && mediaID ) &&
