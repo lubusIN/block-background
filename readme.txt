@@ -48,6 +48,6 @@ If you have any suggestions/Feature request that you would like to see in the up
 
 ***v1.0***
 
-Released on
+Released on 5th April
 
  - Initial plugin release

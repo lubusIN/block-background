@@ -1,4 +1,4 @@
-<p align="center"><img src="https://user-images.githubusercontent.com/1039236/38085557-935d7ce8-336e-11e8-920e-dc2d46610c6a.png"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/1039236/38365718-068c190e-38fb-11e8-8ada-a4a50cfd95d1.png"></p>
 
 <p align="center">
 <a href="https://wordpress.org/plugins/block-background/"><img src="https://img.shields.io/wordpress/plugin/v/block-background.svg" alt="Latest Stable Version"></a> <a href="https://wordpress.org/plugins/block-background/"><img src="https://img.shields.io/wordpress/v/block-background.svg" alt="Version Tested"></a> <a href="https://wordpress.org/plugins/block-background/"><img src="https://img.shields.io/wordpress/plugin/dt/block-background.svg" alt="Downloads"></a> <a href="https://wordpress.org/plugins/block-background/"><img src="https://img.shields.io/wordpress/plugin/r/block-background.svg" alt="Rating"></a> <a href="https://wordpress.org/plugins/block-background/"><img src="https://img.shields.io/aur/license/yaourt.svg" alt="Licence"></a>
@@ -13,7 +13,7 @@ Extend gutenberg blocks with additional background options
 ![Plugin Screenshot](https://raw.githubusercontent.com/lubusIN/block-background/master/.wordpress-org/screenshot-1.gif)
 
 
->**Disclaimer:** Plugin development is in progress & we are constantly improving the code. If you think code can be improved or have any suggestion feel free to send a PR or [open an issue](https://github.com/lubusIN/block-background/issues).
+>**Disclaimer:** Experimental feature plugin to extend gutenberg block. Have any suggestion feel free to send a PR or [open an issue](https://github.com/lubusIN/block-background/issues).
 
 ## Roadmap
 
