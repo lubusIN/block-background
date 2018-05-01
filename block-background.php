@@ -6,14 +6,14 @@
  * Description: Extend gutenberg blocks with additional background options
  * Author: LUBUS
  * Author URI: https://lubus.in
- * Version: 1.0
+ * Version: 1.0.1
  * Text Domain: blockbg
  * Domain Path: /languages
  * GitHub Plugin URI: https://github.com/lubusIN/block-background
  * Tags: gutenberg, block, background, image, gradient
  * Requires at least: 3.0.1
  * Tested up to:  4.9.4
- * Stable tag: 1.0
+ * Stable tag: 1.0.1
  * License: GPLv3 or later
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *

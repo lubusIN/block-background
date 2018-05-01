@@ -41,7 +41,7 @@ const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
 	return ( props ) => {
 		return (
 			<Fragment>
-				<Inspector { ... { ...props } } />
+				{ props.isSelected && <Inspector { ... { ...props } } /> }
 				<BlockEdit { ...props } />
 			</Fragment>
 		);
