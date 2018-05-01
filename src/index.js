@@ -8,7 +8,7 @@ import classnames from 'classnames';
  * WordPress Dependencies
  */
 const { addFilter } = wp.hooks;
-const { getWrapperDisplayName } = wp.element;
+const { Fragment, createHigherOrderComponent } = wp.element;
 
 /**
  * Internal Dependencies
@@ -37,17 +37,16 @@ function addAttributes( settings ) {
  * @param {function|Component} BlockEdit Original component.
  * @return {string} Wrapped component.
  */
-function withInspectorControl( BlockEdit ) {
-	const WrappedBlockEdit = ( props ) => {
-		return [
-			props.isSelected && <Inspector { ... { ...props } } />,
-			<BlockEdit key="block-edit-background" { ...props } />,
-		];
+const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
+	return ( props ) => {
+		return (
+			<Fragment>
+				<Inspector { ... { ...props } } />
+				<BlockEdit { ...props } />
+			</Fragment>
+		);
 	};
-	WrappedBlockEdit.displayName = getWrapperDisplayName( BlockEdit, 'block-background' );
-
-	return WrappedBlockEdit;
-}
+}, 'withInspectorControl' );
 
 /**
  * Override the default block element to add background wrapper props.
@@ -55,21 +54,17 @@ function withInspectorControl( BlockEdit ) {
  * @param  {Function} BlockListBlock Original component
  * @return {Function}                Wrapped component
  */
-function withBackground( BlockListBlock ) {
-	const WrappedComponent = ( props ) => {
+const withBackground = createHigherOrderComponent( ( BlockListBlock ) => {
+	return ( props ) => {
 		let wrapperProps = props.wrapperProps;
 		wrapperProps = {
-			... wrapperProps,
+			...wrapperProps,
 			style: getStyle( props.block.attributes ),
 		};
 
 		return <BlockListBlock { ...props } wrapperProps={ wrapperProps } />;
 	};
-
-	WrappedComponent.displayName = getWrapperDisplayName( BlockListBlock, 'block-background' );
-
-	return WrappedComponent;
-}
+}, 'withBackground' );
 
 /**
  * Override props assigned to save component to inject background atttributes

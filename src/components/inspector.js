@@ -62,7 +62,7 @@ const Inspector = ( props ) => {
 			mediaURL: media.url,
 		} );
 	};
-	const onRemoveImage = ( ) => {
+	const onRemoveImage = () => {
 		setAttributes( {
 			mediaID: undefined,
 			mediaURL: undefined,
@@ -100,7 +100,7 @@ const Inspector = ( props ) => {
 	return (
 		<InspectorControls>
 			<PanelBody title={ __( 'Background Settings' ) } initialOpen={ true } >
-				<ButtonGroup aria-label={ __( 'Background Type' ) }>
+				<ButtonGroup aria-label={ __( 'Background Type' ) } className="block-background__type">
 					{
 						options.backgroundType.map( ( type ) => {
 							return (
@@ -109,7 +109,7 @@ const Inspector = ( props ) => {
 									isLarge
 									isPrimary={ backgroundType === type.value }
 									aria-pressed={ backgroundType === type.value }
-									onClick={ ( ) => onChangeBackgroundType( type.value ) }
+									onClick={ () => onChangeBackgroundType( type.value ) }
 								>
 									{ type.label }
 								</Button>
@@ -150,28 +150,28 @@ const Inspector = ( props ) => {
 				{
 					// Actions for background image selected
 					( 'image' === backgroundType && mediaID ) &&
-						<Fragment>
-							<p className="editor-post-featured-image__howto">
-								{ __( 'Click the image to edit or update' ) }
-							</p>
-							<Button
-								className="button-link"
-								style={ { marginBottom: '20px' } }
-								onClick={ onRemoveImage }>
-								{ __( 'Remove background image' ) }
-							</Button>
-						</Fragment>
+					<Fragment>
+						<p className="editor-post-featured-image__howto">
+							{ __( 'Click the image to edit or update' ) }
+						</p>
+						<Button
+							className="button-link"
+							style={ { marginBottom: '20px' } }
+							onClick={ onRemoveImage }>
+							{ __( 'Remove background image' ) }
+						</Button>
+					</Fragment>
 				}
 
 				{ ( 'image' === backgroundType && mediaID ) &&
-				(
-					<ToggleControl
-						key="togglecontrol"
-						label={ __( 'Overlay' ) }
-						checked={ !! overlay }
-						onChange={ onChangeOverlay }
-					/>
-				) }
+					(
+						<ToggleControl
+							key="togglecontrol"
+							label={ __( 'Overlay' ) }
+							checked={ !! overlay }
+							onChange={ onChangeOverlay }
+						/>
+					) }
 
 				{ overlay &&
 					(
@@ -188,7 +188,7 @@ const Inspector = ( props ) => {
 											isLarge
 											isPrimary={ overlayType === type.value }
 											aria-pressed={ overlayType === type.value }
-											onClick={ ( ) => onChangeOverlayType( type.value ) }
+											onClick={ () => onChangeOverlayType( type.value ) }
 										>
 											{ type.label }
 										</Button>
@@ -203,7 +203,7 @@ const Inspector = ( props ) => {
 				{ ( overlay && 'gradient' === overlayType ) && gradientControl }
 
 				{
-					( overlay && ( 'color' === overlayType || 'gradient' === overlayType ) )	&&
+					( overlay && ( 'color' === overlayType || 'gradient' === overlayType ) ) &&
 					(
 						<RangeControl
 							key="rangecontrol"
