@@ -1,22 +1,22 @@
 /**
  * External Dependencies
  */
-import assign from 'lodash.assign';
-import classnames from 'classnames';
+import { assign } from "lodash";
+import classnames from "classnames";
 
 /**
  * WordPress Dependencies
  */
-const { addFilter } = wp.hooks;
-const { Fragment, createHigherOrderComponent } = wp.element;
+import { addFilter } from "@wordpress/hooks";
+import { Fragment, createHigherOrderComponent } from "@wordpress/element";
 
 /**
  * Internal Dependencies
-*/
-import backgroundSettings from './data/attributes';
-import Inspector from './components/inspector';
-import getStyle from './utils/get-style';
-import './style.scss';
+ */
+import backgroundSettings from "./data/attributes";
+import Inspector from "./components/inspector";
+import getStyle from "./utils/get-style";
+import "./style.scss";
 
 /**
  * Filters registered block settings, extending attributes with background settings
@@ -24,10 +24,10 @@ import './style.scss';
  * @param {Object} settings Original block settings.
  * @return {Object} Filtered block settings.
  */
-function addAttributes( settings ) {
-	// Use Lodash's assign to gracefully handle if attributes are undefined
-	settings.attributes = assign( settings.attributes, backgroundSettings );
-	return settings;
+function addAttributes(settings) {
+  // Use Lodash's assign to gracefully handle if attributes are undefined
+  settings.attributes = assign(settings.attributes, backgroundSettings);
+  return settings;
 }
 
 /**
@@ -37,16 +37,16 @@ function addAttributes( settings ) {
  * @param {function|Component} BlockEdit Original component.
  * @return {string} Wrapped component.
  */
-const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
-	return ( props ) => {
-		return (
-			<Fragment>
-				{ props.isSelected && <Inspector { ... { ...props } } /> }
-				<BlockEdit { ...props } />
-			</Fragment>
-		);
-	};
-}, 'withInspectorControl' );
+const withInspectorControl = createHigherOrderComponent(BlockEdit => {
+  return props => {
+    return (
+      <Fragment>
+        {props.isSelected && <Inspector {...{ ...props }} />}
+        <BlockEdit {...props} />
+      </Fragment>
+    );
+  };
+}, "withInspectorControl");
 
 /**
  * Override the default block element to add background wrapper props.
@@ -54,17 +54,17 @@ const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
  * @param  {Function} BlockListBlock Original component
  * @return {Function}                Wrapped component
  */
-const withBackground = createHigherOrderComponent( ( BlockListBlock ) => {
-	return ( props ) => {
-		let wrapperProps = props.wrapperProps;
-		wrapperProps = {
-			...wrapperProps,
-			style: getStyle( props.block.attributes ),
-		};
+const withBackground = createHigherOrderComponent(BlockListBlock => {
+  return props => {
+    let wrapperProps = props.wrapperProps;
+    wrapperProps = {
+      ...wrapperProps,
+      style: getStyle(props.block.attributes)
+    };
 
-		return <BlockListBlock { ...props } wrapperProps={ wrapperProps } />;
-	};
-}, 'withBackground' );
+    return <BlockListBlock {...props} wrapperProps={wrapperProps} />;
+  };
+}, "withBackground");
 
 /**
  * Override props assigned to save component to inject background atttributes
@@ -75,18 +75,34 @@ const withBackground = createHigherOrderComponent( ( BlockListBlock ) => {
  *
  * @return {Object} Filtered props applied to save element.
  */
-function addBackground( extraProps, blockType, attributes ) {
-	extraProps.style = getStyle( attributes );
-	const { backgroundType, solidColor, gradient, imageID } = attributes;
+function addBackground(extraProps, blockType, attributes) {
+  extraProps.style = getStyle(attributes);
+  const { backgroundType, solidColor, gradient, imageID } = attributes;
 
-	if ( backgroundType && ( solidColor || gradient || imageID ) ) {
-		extraProps.className = classnames( extraProps.className, 'has-background' );
-	}
+  if (backgroundType && (solidColor || gradient || imageID)) {
+    extraProps.className = classnames(extraProps.className, "has-background");
+  }
 
-	return extraProps;
+  return extraProps;
 }
 
-addFilter( 'blocks.registerBlockType', 'lubus/background/attribute', addAttributes );
-addFilter( 'blocks.BlockEdit', 'lubus/background/inspector', withInspectorControl );
-addFilter( 'editor.BlockListBlock', 'lubus/background/withBackground', withBackground );
-addFilter( 'blocks.getSaveContent.extraProps', 'lubus/background/addAssignedBackground', addBackground );
+addFilter(
+  "blocks.registerBlockType",
+  "lubus/background/attribute",
+  addAttributes
+);
+addFilter(
+  "blocks.BlockEdit",
+  "lubus/background/inspector",
+  withInspectorControl
+);
+addFilter(
+  "editor.BlockListBlock",
+  "lubus/background/withBackground",
+  withBackground
+);
+addFilter(
+  "blocks.getSaveContent.extraProps",
+  "lubus/background/addAssignedBackground",
+  addBackground
+);
