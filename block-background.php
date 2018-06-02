@@ -166,8 +166,8 @@ class LubusIN_Block_Background {
 	 * @return void
 	 */
 	public function register_block_background(){
-		$block_js = 'build/background.js';
-		$block_css = 'build/background.css';
+		$block_js = 'build/script.js';
+		$block_css = 'build/style.css';
 
 		// Script
 		wp_register_script(
@@ -182,7 +182,7 @@ class LubusIN_Block_Background {
 			filemtime( BLOCKBG_PLUGIN_DIR . $block_js )
 		);
 
-		// Style
+		// Common stlyes
 		wp_register_style(
 			'block-background',
 			BLOCKBG_PLUGIN_URL . $block_css,

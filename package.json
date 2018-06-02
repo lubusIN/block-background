@@ -8,51 +8,53 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "lodash.assign": "^4.2.0",
+    "lodash": "^4.17.4",
     "tinycolor2": "^1.4.1"
   },
-  "devDependencies": {
-    "@wordpress/babel-preset-default": "1.0.3",
-    "@wordpress/scripts": "1.0.2",
-    "autoprefixer": "^7.2.4",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.3",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.24.1",
-    "clean-webpack-plugin": "^0.1.17",
-    "copy-webpack-plugin": "latest",
-    "cross-env": "3.2.4",
-    "css-loader": "^0.28.7",
-    "cssnano": "^3.10.0",
-    "eslint": "^4.8.0",
-    "eslint-config-wordpress": "^2.0.0",
-    "eslint-plugin-react": "^7.5.1",
-    "expose-loader": "latest",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "file-loader": "^1.1.4",
-    "imagemin-webpack-plugin": "^1.5.2",
-    "node-sass": "^4.5.3",
-    "postcss-loader": "^2.0.6",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.18.2",
-    "stylelint-config-wordpress": "^12.0.0",
-    "url-loader": "^0.5.9",
-    "webpack": "^3.6.0",
-    "webpack-rtl-plugin": "latest",
-    "wp-pot": "latest"
-  },
   "scripts": {
-    "dev": "cross-env webpack",
-    "production": "cross-env NODE_ENV=production webpack",
-    "build": "npm run production",
-    "watch": "cross-env webpack --watch",
-    "lint": "npm run lint:js & npm run lint:scss",
-    "lint:js": "eslint src/**/*.js",
-    "lint:scss": "stylelint src/**/*.scss",
-    "fix:js": "eslint src/**/*.js --fix"
+    "lint": "eslint src",
+    "build": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
+    "dev": "cross-env BABEL_ENV=default webpack --watch"
+  },
+  "babel": {
+    "presets": [
+      "@wordpress/default"
+    ],
+    "env": {
+      "production": {
+        "plugins": [
+          [
+            "@wordpress/babel-plugin-makepot",
+            {
+              "output": "languages/cpb.pot"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "devDependencies": {
+    "@wordpress/babel-plugin-makepot": "^1.0.0",
+    "@wordpress/babel-preset-default": "^1.1.0",
+    "@wordpress/browserslist-config": "^2.1.0",
+    "@wordpress/i18n": "^1.0.0",
+    "autoprefixer": "^7.1.6",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.2",
+    "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "^5.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.7.2",
+    "postcss-loader": "^2.0.9",
+    "prettier": "^1.9.1",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.8.1",
+    "webpack-rtl-plugin": "^1.6.0"
   }
 }
