@@ -8,7 +8,8 @@ import classnames from "classnames";
  * WordPress Dependencies
  */
 import { addFilter } from "@wordpress/hooks";
-import { Fragment, createHigherOrderComponent } from "@wordpress/element";
+import { Fragment } from "@wordpress/element";
+import { createHigherOrderComponent } from "@wordpress/compose";
 
 /**
  * Internal Dependencies
@@ -92,7 +93,7 @@ addFilter(
   addAttributes
 );
 addFilter(
-  "blocks.BlockEdit",
+  "editor.BlockEdit",
   "lubus/background/inspector",
   withInspectorControl
 );

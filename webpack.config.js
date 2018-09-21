@@ -44,6 +44,7 @@ const externals = {
 const wpDependencies = [
   "components",
   "element",
+  "compose",
   "blocks",
   "editor",
   "hooks",
