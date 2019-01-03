@@ -3,6 +3,11 @@
 
 All notable changes to "Block Background" will be documented here
 
+***v1.0.3***
+
+Released on 4th January
+ - Compatibility with WordPress 5.0.2
+
 ***v1.0.2***
 
 Released on 21st September

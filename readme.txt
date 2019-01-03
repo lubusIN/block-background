@@ -3,8 +3,8 @@ Contributors: lubus,ajitbohra
 Donate link: http://www.lubus.in
 Tags: gutenberg, block, background, image, gradient
 Requires at least: 3.0.1
-Tested up to:  4.9.4
-Stable tag: 1.0.2
+Tested up to:  5.0.2
+Stable tag: 1.0.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -45,6 +45,12 @@ If you have any suggestions/Feature request that you would like to see in the up
 1. Plugin in action
 
 == Changelog ==
+
+
+***v1.0.3***
+
+Released on 4th January
+ - Compatibility with WordPress 5.0.2
 
 ***v1.0.2***
 
