@@ -2,19 +2,19 @@
  * WordPress Dependencies
  */
 import { __ } from "@wordpress/i18n";
-import {
-  InspectorControls,
-  ColorPalette,
-  MediaUpload
-} from "@wordpress/editor";
+
+import { InspectorControls, MediaUpload } from "@wordpress/editor";
+
 import {
   PanelBody,
   Button,
   ButtonGroup,
   SelectControl,
   ToggleControl,
+  ColorPalette,
   RangeControl
 } from "@wordpress/components";
+
 import { Fragment } from "@wordpress/element";
 
 /**
