@@ -188,9 +188,7 @@ class LubusIN_Block_Background {
 		wp_register_style(
 			'block-background',
 			BLOCKBG_PLUGIN_URL . $block_css,
-			array(
-				'wp-blocks',
-			),
+			array(),
 			filemtime(BLOCKBG_PLUGIN_DIR . $block_css)
 		);
 

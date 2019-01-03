@@ -3,7 +3,11 @@
  */
 import { __ } from "@wordpress/i18n";
 
-import { InspectorControls, MediaUpload } from "@wordpress/editor";
+import {
+  InspectorControls,
+  MediaUpload,
+  ColorPalette
+} from "@wordpress/editor";
 
 import {
   PanelBody,
@@ -11,7 +15,6 @@ import {
   ButtonGroup,
   SelectControl,
   ToggleControl,
-  ColorPalette,
   RangeControl
 } from "@wordpress/components";
 
