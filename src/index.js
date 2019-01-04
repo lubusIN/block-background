@@ -77,10 +77,10 @@ const withBackground = createHigherOrderComponent(BlockListBlock => {
  * @return {Object} Filtered props applied to save element.
  */
 function addBackground(extraProps, blockType, attributes) {
-  extraProps.style = getStyle(attributes);
   const { backgroundType, solidColor, gradient, imageID } = attributes;
 
   if (backgroundType && (solidColor || gradient || imageID)) {
+    extraProps.style = assign(extraProps.style, getStyle(attributes));
     extraProps.className = classnames(extraProps.className, "has-background");
   }
 
