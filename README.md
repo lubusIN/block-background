@@ -66,15 +66,32 @@ If you discover any security related issues, please email to [ajit@lubus.in](mai
 	<tr>
 		<td width="33.33%">
 			<a href="https://github.com/lubusIN/color-palette-block">
-			<img src="https://user-images.githubusercontent.com/1039236/38085557-935d7ce8-336e-11e8-920e-dc2d46610c6a.png" alt="Color Palette"/>
+				<img src="https://user-images.githubusercontent.com/1039236/38085557-935d7ce8-336e-11e8-920e-dc2d46610c6a.png" alt="Color Palette"/>
 			</a>
 		</td>
 		<td width="33.33%">
-		<a href="https://github.com/lubusIN/dummynator">
-			<img src="https://raw.githubusercontent.com/lubusIN/dummynator/master/.wordpress-org/logo.png" alt="Dummynator" />
-		</a>
+			<a href="https://github.com/lubusIN/wp-storybook">
+				<img src="https://raw.githubusercontent.com/lubusIN/wp-storybook/master/assets/logo.png" alt="WP Storybook"/>
+			</a>
 		</td>
-		<td width="33.33%"><strong><i>Coming Soon ...</i></strong></td>
+		<td width="33.33%">
+			<a href="https://github.com/lubusIN/dummynator">
+				<img src="https://raw.githubusercontent.com/lubusIN/dummynator/master/.wordpress-org/logo.png" alt="Dummynator"/>
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="33.33%">
+			<a href="https://github.com/lubusIN/wp-theme-support">
+				<img src="https://raw.githubusercontent.com/lubusIN/wp-theme-support/master/.wordpress-org/logo.png" alt="Theme Support"/>
+			</a>
+		</td>
+		<td width="33.33%">
+			<strong><i>More coming soon ...</i>
+		</td>
+		<td width="33.33%">
+			&nbsp;
+		</td>
 	</tr>
 </table>
 

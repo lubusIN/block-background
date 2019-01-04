@@ -4,7 +4,7 @@ Donate link: http://www.lubus.in
 Tags: gutenberg, block, background, image, gradient
 Requires at least: 3.0.1
 Tested up to:  5.0.2
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -47,26 +47,31 @@ If you have any suggestions/Feature request that you would like to see in the up
 == Changelog ==
 
 
-***v1.0.3***
+***1.0.4***
 
-Released on 4th January
+Released on 5th January 2018
+ - Fix conflict with other block styles
+
+***1.0.3***
+
+Released on 4th January 2018
  - Compatibility with WordPress 5.0.2
 
-***v1.0.2***
+***1.0.2***
 
-Released on 21st September
+Released on 21st September 2017
  - Compatibility with Gutenberg 3.9
  - Add docker-compose config
  - Use WP dependencies as ES modules
 
-***v1.0.1***
+***1.0.1***
 
-Released on 1st May
+Released on 1st May 2017
 
  - Compatibility with Gutenberg 2.7
 
-***v1.0***
+***1.0.0***
 
-Released on 5th April
+Released on 5th April 2017
 
  - Initial plugin release
