@@ -17,13 +17,13 @@ Extend gutenberg blocks with additional background options.
 ![Plugin Screenshot](https://raw.githubusercontent.com/lubusIN/block-background/master/.wordpress-org/screenshot-1.gif)
 
 
->**Disclaimer:** Experimental feature plugin to extend gutenberg block. Have any suggestion feel free to send a PR or [open an issue](https://github.com/lubusIN/block-background/issues).
+>**Disclaimer:** Experimental feature plugin to extend gutenberg block. If you have any suggestions, feel free to send a PR or [open an issue](https://github.com/lubusIN/block-background/issues).
 
 ## Roadmap
 
 - More customization
 
-If you have any suggestions/feature request that you would like to see in the upcoming releases , feel free to let us know in the [issues section](https://github.com/lubusIN/block-background/issues)
+If you have any suggestions/feature request that you would like to see in the upcoming releases, feel free to let us know in the [issues section](https://github.com/lubusIN/block-background/issues)
 
 
 ## Installation
@@ -41,7 +41,7 @@ If you have any suggestions/feature request that you would like to see in the up
 ## Usage
 
 - Simply activate and new options for background will be added to inspector / sidebar options<br/>
-- Insert block of your choice add set background options<br/>
+- Insert block of your choice and set background options<br/>
 - Live preview of background changes in your editor
 
 ## Changelog
@@ -49,9 +49,9 @@ If you have any suggestions/feature request that you would like to see in the up
 Please see the [Changelog](CHANGELOG.md) 
 ## Contributing
 
-Thank you for considering contributing to the `Block Background`. You can read the contribution guide lines [here](CONTRIBUTING.md)
+Thank you in advance if you wish to contribute to the `Block Background`. You can read the contribution guidelines [here](CONTRIBUTING.md)
 
-Check the development tasklist [here](https://github.com/lubusIN/block-background/projects/1) if something interest you or suggest something [here](https://github.com/lubusIN/block-background/issues)
+Check the development tasklist [here](https://github.com/lubusIN/block-background/projects/1), if something interests you or want to suggest something click [here](https://github.com/lubusIN/block-background/issues)
 
 ## Security
 
@@ -103,8 +103,8 @@ If you discover any security related issues, please email to [ajit@lubus.in](mai
 
 [LUBUS](http://lubus.in) is a web design agency based in Mumbai, India.
 
-You can pledge on [patreon](https://www.patreon.com/lubus) to support the development & maintenance of various [opensource](https://github.com/lubusIN/) stuff we are building.
+You can pledge on [patreon](https://www.patreon.com/lubus) to support the development & maintenance of various [opensource](https://github.com/lubusIN/) stuffs we are building.
 
 ## License
 
-`Block Background` is open-sourced software licensed under the [GPL 3.0 license](LICENSE)
+`Block Background` is an open-source software licensed under the [GPL 3.0 license](LICENSE)
