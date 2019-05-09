@@ -11,7 +11,7 @@
 
 ## Introduction
 
-Extend gutenberg blocks with additional background options
+Extend gutenberg blocks with additional background options.
 
 ## Screenshot
 ![Plugin Screenshot](https://raw.githubusercontent.com/lubusIN/block-background/master/.wordpress-org/screenshot-1.gif)
