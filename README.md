@@ -23,9 +23,6 @@ Extend gutenberg blocks with additional background options.
 
 - More customization
 
-If you have any suggestions/feature request that you would like to see in the upcoming releases, feel free to let us know in the [issues section](https://github.com/lubusIN/block-background/issues)
-
-
 ## Installation
 
 ***From your WordPress dashboard***
@@ -47,6 +44,11 @@ If you have any suggestions/feature request that you would like to see in the up
 ## Changelog
 
 Please see the [Changelog](CHANGELOG.md) 
+
+## Feedback/Suggestions
+
+If you have any suggestions/feature request that you would like to see in the upcoming releases, feel free to let us know in the [issues section](https://github.com/lubusIN/block-background/issues)
+
 ## Contributing
 
 Thank you in advance if you wish to contribute to the `Block Background`. You can read the contribution guidelines [here](CONTRIBUTING.md)
