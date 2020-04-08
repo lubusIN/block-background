@@ -1,5 +1,5 @@
 === Block Background ===
-Contributors: lubus,ajitbohra
+Contributors: lubus,ajitbohra,naveenkharwar
 Donate link: http://www.lubus.in
 Tags: gutenberg, block, background, image, gradient
 Requires at least: 3.0.1
