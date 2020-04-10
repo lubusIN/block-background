@@ -5,7 +5,7 @@ services:
   wordpress:
     image: wordpress
     ports:
-      - 9999:80
+      - 1999:80
     environment:
       WORDPRESS_DB_PASSWORD: blockbackground
     volumes:

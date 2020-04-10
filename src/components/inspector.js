@@ -136,44 +136,48 @@ const Inspector = props => {
 						value={mediaID}
 						render={({ open }) => (
 							<Fragment>
-								<Button className="button-link" onClick={open}>
-									{!mediaID ? (
-										__("Set background image")
-									) : (
-										<img src={mediaURL} />
-									)}
-								</Button>
+								<div className="editor-post-featured-image__container">
+									<Button
+										className="editor-post-featured-image__toggle"
+										onClick={open}
+									>
+										{!mediaID ? (
+											__("Set background image")
+										) : (
+											<img src={mediaURL} />
+										)}
+									</Button>
+									<div className="components-drop-zone"></div>
+								</div>
 							</Fragment>
 						)}
 					/>
 				)}
 
 				{// Actions for background image selected
-				"image" === backgroundType &&
-					mediaID && (
-						<Fragment>
-							<p className="editor-post-featured-image__howto">
-								{__("Click the image to edit or update")}
-							</p>
-							<Button
-								className="button-link"
-								style={{ marginBottom: "20px" }}
-								onClick={onRemoveImage}
-							>
-								{__("Remove background image")}
-							</Button>
-						</Fragment>
-					)}
+				"image" === backgroundType && mediaID && (
+					<Fragment>
+						<p className="editor-post-featured-image__howto">
+							{__("Click the image to edit or update")}
+						</p>
+						<Button
+							className="button-link"
+							style={{ marginBottom: "20px" }}
+							onClick={onRemoveImage}
+						>
+							{__("Remove background image")}
+						</Button>
+					</Fragment>
+				)}
 
-				{"image" === backgroundType &&
-					mediaID && (
-						<ToggleControl
-							key="togglecontrol"
-							label={__("Overlay")}
-							checked={!!overlay}
-							onChange={onChangeOverlay}
-						/>
-					)}
+				{"image" === backgroundType && mediaID && (
+					<ToggleControl
+						key="togglecontrol"
+						label={__("Overlay")}
+						checked={!!overlay}
+						onChange={onChangeOverlay}
+					/>
+				)}
 
 				{overlay && (
 					<ButtonGroup aria-label={__("Overlay Type")} key="overlaytype">
@@ -201,17 +205,16 @@ const Inspector = props => {
 
 				{overlay && "gradient" === overlayType && gradientControl}
 
-				{overlay &&
-					("color" === overlayType || "gradient" === overlayType) && (
-						<RangeControl
-							key="rangecontrol"
-							label="Opacity"
-							value={opacity}
-							onChange={onChangeOpacity}
-							min={1}
-							max={10}
-						/>
-					)}
+				{overlay && ("color" === overlayType || "gradient" === overlayType) && (
+					<RangeControl
+						key="rangecontrol"
+						label="Opacity"
+						value={opacity}
+						onChange={onChangeOpacity}
+						min={1}
+						max={10}
+					/>
+				)}
 			</PanelBody>
 		</InspectorControls>
 	);
