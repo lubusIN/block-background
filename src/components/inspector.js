@@ -135,13 +135,16 @@ const Inspector = props => {
             value={mediaID}
             render={({ open }) => (
               <Fragment>
-                <Button className="button-link" onClick={open}>
+              <div className="editor-post-featured-image__container">
+                <Button className="components-button editor-post-featured-image__toggle block-bg" onClick={open}>
                   {!mediaID ? (
                     __("Set background image")
                   ) : (
                     <img src={mediaURL} />
                   )}
                 </Button>
+                <div className="components-drop-zone"></div>
+                </div>
               </Fragment>
             )}
           />
@@ -155,7 +158,7 @@ const Inspector = props => {
                 {__("Click the image to edit or update")}
               </p>
               <Button
-                className="button-link"
+                className="components-button is-link is-destructive"
                 style={{ marginBottom: "20px" }}
                 onClick={onRemoveImage}
               >
