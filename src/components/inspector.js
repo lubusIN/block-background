@@ -136,7 +136,7 @@ const Inspector = props => {
             value={mediaID}
             render={({ open }) => (
               <Fragment>
-                <Button className="button-link" onClick={open} isSmall>
+                <Button className="button-link" onClick={open}>
                   {!mediaID ? (
                     __("Set background image")
                   ) : (
