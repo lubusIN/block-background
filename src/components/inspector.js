@@ -112,7 +112,8 @@ const Inspector = props => {
             return (
               <Button
                 key={type.label}
-                isLarge
+                isSmall
+                isSecondary
                 isPrimary={backgroundType === type.value}
                 aria-pressed={backgroundType === type.value}
                 onClick={() => onChangeBackgroundType(type.value)}
@@ -135,7 +136,7 @@ const Inspector = props => {
             value={mediaID}
             render={({ open }) => (
               <Fragment>
-                <Button className="button-link" onClick={open}>
+                <Button className="button-link" onClick={open} isSmall>
                   {!mediaID ? (
                     __("Set background image")
                   ) : (
@@ -184,7 +185,8 @@ const Inspector = props => {
               return (
                 <Button
                   key={type.label}
-                  isLarge
+                  isSmall
+                  isSecondary
                   isPrimary={overlayType === type.value}
                   aria-pressed={overlayType === type.value}
                   onClick={() => onChangeOverlayType(type.value)}
