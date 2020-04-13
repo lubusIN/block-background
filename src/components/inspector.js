@@ -134,7 +134,6 @@ const Inspector = props => {
             type="image"
             value={mediaID}
             render={({ open }) => (
-              <Fragment>
                 <div className="editor-post-featured-image__container">
                   <Button className="components-button editor-post-featured-image__toggle block-bg" onClick={open}>
                   {!mediaID ? (
@@ -143,9 +142,7 @@ const Inspector = props => {
                     <img src={mediaURL} />
                   )}
                 </Button>
-                <div className="components-drop-zone"></div>
                 </div>
-              </Fragment>
             )}
           />
         )}
