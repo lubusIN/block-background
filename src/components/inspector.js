@@ -131,40 +131,40 @@ const Inspector = props => {
         {"gradient" === backgroundType && gradientControl}
 
         {"image" === backgroundType && (
-          <MediaUploadCheck fallback={ 'To edit the featured image, you need permission to upload media.' }>
-          <MediaUpload
-            key="mediaupload"
-            onSelect={onSelectImage}
-            type="image"
-            value={mediaID}
-            render={({ open }) => (
+          <MediaUploadCheck
+            fallback={
+              "To edit the featured image, you need permission to upload media."
+            }
+          >
+            <MediaUpload
+              key="mediaupload"
+              onSelect={onSelectImage}
+              type="image"
+              value={mediaID}
+              render={({ open }) => (
                 <Button
-									className={
-										! mediaID
-											? 'editor-post-featured-image__toggle'
-											: 'editor-post-featured-image__preview'
+                  className={
+                    !mediaID
+                      ? "editor-post-featured-image__toggle"
+                      : "editor-post-featured-image__preview"
                   }
-									aria-label={
-										! mediaID
-											? null
-											: __( 'Edit or update the image' )
-									}
+                  aria-label={!mediaID ? null : __("Edit or update the image")}
                   onClick={open}
                 >
                   {!mediaID ? (
                     __("Set background image")
                   ) : (
-                  <ResponsiveWrapper
-                    naturalWidth={ 2000 }
-                    naturalHeight={ 1080 }
-                    isInline
-                  >
-                    <img src={mediaURL} />
-                  </ResponsiveWrapper>
+                    <ResponsiveWrapper
+                      naturalWidth={2000}
+                      naturalHeight={1080}
+                      isInline
+                    >
+                      <img src={mediaURL} />
+                    </ResponsiveWrapper>
                   )}
                 </Button>
-            )}
-          />
+              )}
+            />
           </MediaUploadCheck>
         )}
 
