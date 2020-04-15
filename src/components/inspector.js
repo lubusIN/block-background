@@ -7,7 +7,7 @@ import {
   InspectorControls,
   MediaUpload,
   ColorPalette
-} from "@wordpress/editor";
+} from "@wordpress/blockEditor"
 
 import {
   PanelBody,

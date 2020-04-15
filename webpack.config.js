@@ -54,7 +54,8 @@ const wpDependencies = [
   "i18n",
   "editPost",
   "plugins",
-  "apiRequest"
+  "apiRequest",
+  "blockEditor"
 ];
 wpDependencies.forEach(wpDependency => {
   externals["@wordpress/" + wpDependency] = {

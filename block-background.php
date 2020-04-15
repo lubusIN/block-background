@@ -180,6 +180,7 @@ class LubusIN_Block_Background {
 				'wp-element',
 				'wp-components',
 				'wp-editor',
+				'wp-block-editor'
 			),
 			filemtime( BLOCKBG_PLUGIN_DIR . $block_js )
 		);
