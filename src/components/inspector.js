@@ -15,7 +15,8 @@ import {
   ButtonGroup,
   SelectControl,
   ToggleControl,
-  RangeControl
+  RangeControl,
+  ResponsiveWrapper
 } from "@wordpress/components";
 
 import { Fragment } from "@wordpress/element";
@@ -112,7 +113,8 @@ const Inspector = props => {
             return (
               <Button
                 key={type.label}
-                isLarge
+                isSmall
+                isSecondary
                 isPrimary={backgroundType === type.value}
                 aria-pressed={backgroundType === type.value}
                 onClick={() => onChangeBackgroundType(type.value)}
@@ -128,40 +130,59 @@ const Inspector = props => {
         {"gradient" === backgroundType && gradientControl}
 
         {"image" === backgroundType && (
-          <MediaUpload
-            key="mediaupload"
-            onSelect={onSelectImage}
-            type="image"
-            value={mediaID}
-            render={({ open }) => (
-              <Fragment>
-                <Button className="button-link" onClick={open}>
+          <MediaUploadCheck
+            fallback={
+              "To edit the featured image, you need permission to upload media."
+            }
+          >
+            <MediaUpload
+              key="mediaupload"
+              onSelect={onSelectImage}
+              type="image"
+              value={mediaID}
+              render={({ open }) => (
+                <Button
+                  className={
+                    !mediaID
+                      ? "editor-post-featured-image__toggle"
+                      : "editor-post-featured-image__preview"
+                  }
+                  aria-label={!mediaID ? null : __("Edit or update the image")}
+                  onClick={open}
+                >
                   {!mediaID ? (
                     __("Set background image")
                   ) : (
-                    <img src={mediaURL} />
+                    <ResponsiveWrapper
+                      naturalWidth={2000}
+                      naturalHeight={1080}
+                      isInline
+                    >
+                      <img src={mediaURL} />
+                    </ResponsiveWrapper>
                   )}
                 </Button>
-              </Fragment>
-            )}
-          />
+              )}
+            />
+          </MediaUploadCheck>
         )}
 
         {// Actions for background image selected
         "image" === backgroundType &&
           mediaID && (
-            <Fragment>
+            <MediaUploadCheck>
               <p className="editor-post-featured-image__howto">
                 {__("Click the image to edit or update")}
               </p>
               <Button
-                className="button-link"
                 style={{ marginBottom: "20px" }}
                 onClick={onRemoveImage}
+                isLink
+                isDestructive
               >
                 {__("Remove background image")}
               </Button>
-            </Fragment>
+            </MediaUploadCheck>
           )}
 
         {"image" === backgroundType &&
@@ -184,7 +205,8 @@ const Inspector = props => {
               return (
                 <Button
                   key={type.label}
-                  isLarge
+                  isSmall
+                  isSecondary
                   isPrimary={overlayType === type.value}
                   aria-pressed={overlayType === type.value}
                   onClick={() => onChangeOverlayType(type.value)}
