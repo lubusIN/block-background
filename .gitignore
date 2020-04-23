@@ -55,3 +55,6 @@ languages/*.pot
 # Project Notes
 TODO.md
 NOTES.md
+
+# config override
+.wp-env.override.json

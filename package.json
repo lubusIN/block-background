@@ -14,7 +14,9 @@
   "scripts": {
     "lint": "eslint src",
     "build": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
-    "dev": "cross-env BABEL_ENV=default webpack --watch"
+    "dev": "cross-env BABEL_ENV=default webpack --watch",
+    "env:start": "wp-env start",
+    "env:stop": "wp-env stop"
   },
   "babel": {
     "presets": [
@@ -37,6 +39,7 @@
     "@wordpress/babel-plugin-makepot": "^1.0.0",
     "@wordpress/babel-preset-default": "^1.1.0",
     "@wordpress/browserslist-config": "^2.1.0",
+    "@wordpress/env": "^1.2.0",
     "@wordpress/i18n": "^1.0.0",
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
