@@ -15,8 +15,7 @@
     "lint": "eslint src",
     "build": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
     "dev": "cross-env BABEL_ENV=default webpack --watch",
-    "env:start": "wp-env start",
-    "env:stop": "wp-env stop"
+    "wp-env": "wp-env"
   },
   "babel": {
     "presets": [

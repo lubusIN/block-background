@@ -44,6 +44,7 @@ intermediate
 cache
 node_modules
 assets/dist/
+/wordpress
 
 # Composer
 vendor
