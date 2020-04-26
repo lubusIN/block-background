@@ -44,6 +44,7 @@ intermediate
 cache
 node_modules
 assets/dist/
+/wordpress
 
 # Composer
 vendor
@@ -55,3 +56,6 @@ languages/*.pot
 # Project Notes
 TODO.md
 NOTES.md
+
+# config override
+.wp-env.override.json
