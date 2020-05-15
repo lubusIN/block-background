@@ -6,9 +6,8 @@ import { __ } from "@wordpress/i18n";
 import {
   InspectorControls,
   MediaUpload,
-  ColorPalette,
-  MediaUploadCheck
-} from "@wordpress/editor";
+  ColorPalette
+} from "@wordpress/blockEditor"
 
 import {
   PanelBody,
